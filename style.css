@@ -1,0 +1,109 @@
+@font-face {
+	font-family: 'downcome'; 
+	src: local('downcome'),
+		url(/fonts/downcome.otf); 
+}
+
+body {
+    margin: 0px;
+    padding: 2% 4%;
+    font-family: 'downcome';
+}
+
+.welcome_container {
+    /*ОБОЖАЮ ВЕРСТКУ!!!*/
+    font-size: 0;
+    height: 150px;
+}
+
+.welcome {
+    box-sizing: border-box;
+    margin: 0px;
+    /* padding: 50px 0px; */
+    display: inline-block;
+    background-color: silver;
+    height: 100%;
+    vertical-align: bottom;
+    font-size: medium;
+    align-content: center;
+    text-align: center;
+}
+
+.welc1 {
+    font-size: 60px;
+    width: 40%;
+}
+
+.welc2 {
+    height: 50%;
+    width: 60%;
+}
+
+.menu_n {
+    width: 50px;
+    height: 20px;
+    margin: 0px 20px;
+    padding: 5px 10px;
+    background-color: gray;
+}
+
+.selected_menu {
+    color: yellow;
+}
+
+.gallery {
+    font-size: 0;
+    margin: 2px 0px;
+    height: 600px;
+}
+
+.big_img img {
+    height: 100%;
+    width: 50%;
+}
+
+div.small_img {
+    display: inline-block;
+    font-size: 0;
+    width: 50%;
+    height: 99%;
+}
+
+.small_img img {
+    display: block;
+    height: 50%;
+    width: 99%;
+}
+
+.container-text-block {
+    font-size: 0;
+    margin: 20px 0px;
+}
+
+.text-block {
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    margin: 0px;
+    font-size: medium;
+    border: solid 2px silver;
+    vertical-align: top;
+}
+
+.btw-spac {
+    margin-right: 4.47%;
+}
+
+.text {
+    padding: 0 5%;
+}
+
+.img-descr {
+    height: 50px;
+    width: 100px;
+    margin-top: 10px;
+}
+
+.text-topic {
+    margin: 10px 0;
+}
