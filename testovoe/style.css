@@ -1,0 +1,103 @@
+h3 {
+    text-align: center;
+}
+
+p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+a {
+    flex: 1;
+    background-color: rgb(200, 255, 255);
+    margin: 5px 40%;
+    padding: 10px 0;
+    text-decoration: none;
+}
+
+p a:nth-child(1) {
+    background-color: aqua;
+}
+
+.content div {
+    background-color: azure;
+    margin: 5px 5px;
+    padding: 10px;
+}
+
+.content div:nth-child(1) {
+    background-color: aqua;
+    grid-area: a;
+    margin-right: 0;
+}
+
+.content :nth-child(2) {
+    grid-area: b;
+    margin-bottom: 0;
+}
+
+.content :nth-child(3) {
+    grid-area: c;
+    margin-bottom: 0;
+}
+
+.content :nth-child(4) {
+    grid-area: d;
+}
+
+.content {
+    background-color: green;
+    display: grid;
+    grid-template-areas: 
+    "a b"
+    "a c"
+    "a d";
+    margin: 0 20%;
+}
+
+.content a {
+    background-color: transparent;
+    flex: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+    p {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    p a {
+        margin: 0 5%;
+        padding: 10px 10px;
+    }
+
+    .content {
+        display: grid;
+        grid-template-areas: 
+        "a b"
+        "c d";
+        margin: 0;
+        padding: 0;
+    }
+
+    .content :nth-child(1) {
+        grid-area: a;
+        margin-right: 5px;
+    }
+    
+    .content :nth-child(2) {
+        grid-area: b;
+        margin-bottom: 5px;
+    }
+    
+    .content :nth-child(3) {
+        grid-area: c;
+        margin-bottom: 5px;
+    }
+
+}
