@@ -1,0 +1,14 @@
+extends template 
+     
+block content 
+ 
+        h1.topf Топ 5 самых крутых видеокарт:
+
+        // Блоки с видеокартами
+        each card in [1, 2, 3, 4, 5]
+            div(style="text-align: center;")
+                img(src=require(`./styles/img/${card}.png`), height="200", width="500", alt=`Изображение видеокарты №${card}`)
+                p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                | Rem, eligendi obcaecati? Dolores deleniti, provident impedit quae aliquam itaque eius hic labore omnis officia aliquid?
+                | Illo dolorum adipisci harum ea atque!

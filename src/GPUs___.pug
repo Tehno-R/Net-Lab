@@ -1,0 +1,24 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    title Самые высокие здания
+  body
+    h1 Самые высокие здания в мире
+    nav
+      ul
+        li: a(href="index.html") Главная
+        li: a(href="list_of_GPUs.html") Список самых крутых видеокарт
+
+    h1 Топ 5 самых крутых видеокарт:
+      style="text-align: center;"
+
+    // Блоки с видеокартами
+    each card in [1, 2, 3, 4, 5]
+      div(style="text-align: center;")
+        img(src=require(`./styles/img/${card}.png`), height="200", width="500", alt=`Изображение видеокарты №${card}`)
+        p
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          | Rem, eligendi obcaecati? Dolores deleniti, provident impedit quae aliquam itaque eius hic labore omnis officia aliquid?
+          | Illo dolorum adipisci harum ea atque!
+      hr(color="black", size="2", width="85%")

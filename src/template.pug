@@ -1,0 +1,22 @@
+include components/mixin.pug 
+include components/data.pug 
+
+doctype html
+html(lang="ru") 
+    head 
+        title #{title}  
+    body 
+        nav 
+            .finder
+                input.find-holder(type='text')
+            .main-theme
+                .navigate
+                    +createMenu(dictMenu) 
+                .main-title &Vcy;&icy;&dcy;&iecy;&ocy;&kcy;&acy;&rcy;&tcy;&ycy;!!!
+    
+        block content 
+
+        footer 
+            hr(color="black", size="2", width="85%")
+            h4 &copy; Лосевский Иван Захарович, Б9122-09.03.04. Все права защищены.
+             

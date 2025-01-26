@@ -1,0 +1,83 @@
+extends template
+
+//- block nav 
+//-     nav 
+//-         +createMenu(dictMenu, 'Главная') 
+         
+//- block content 
+//-     div.images 
+//-         each pict in listImages 
+//-             a(href= "building.html") 
+//-                 img(src= require("./images/" + pict)) 
+
+block cunt
+    .finder
+      input.find-holder(type='text')
+    .main-theme
+      .navigate
+        a.menu(href='./list_of_GPUs.html') Таблица
+        a.menu(href='./1.html') Menu 1
+        a.menu(href='./2.html') Menu 2
+        a.menu(href='./3.html') Menu 3
+      .main-title
+        | &Vcy;&icy;&dcy;&iecy;&ocy;&kcy;&acy;&rcy;&tcy;&ycy;!!!
+    .content-container
+      .content1
+        .big-img
+          a(href="./1.html")
+            img(src=require('./styles/img/1.png') alt='')
+        .content1-title Title
+        .content1-description
+          p
+            | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, animi perferendis ex maiores
+            | autem ea odio. Vitae cum quas, modi hic, dolore corporis temporibus ut quos debitis aperiam consequatur
+            | adipisci.
+      .content2
+        .content2-top
+          .small-img
+            a(href="./2.html")
+              img(src=require('./styles/img/4.png') alt='')
+          .content2-title-div Title
+        .content2-text-div
+          | Cupiditate neque accusantium ratione in quasi adipisci voluptates,
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          | repellendus ex itaque maxime eveniet, consequatur totam nostrum doloribus, quos animi omnis corporis id.
+      .content1
+        .big-img
+          a(href="./3.html")
+            img(src=require('./styles/img/2.png') alt='')
+        .content1-title Title
+        .content1-description
+          p
+            | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, animi perferendis ex maiores
+            | autem ea odio. Vitae cum quas, modi hic, dolore corporis temporibus ut quos debitis aperiam consequatur
+            | adipisci.
+      .content2
+        .content2-top
+          .small-img
+            a(href="./4.html")
+              img(src=require('./styles/img/5.png') alt='')
+          .content2-title-div Title
+        .content2-text-div
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          | Cupiditate neque accusantium ratione in quasi adipisci voluptates,
+          | repellendus ex itaque maxime eveniet, consequatur totam nostrum doloribus, quos animi omnis corporis id.
+      .content1
+        .big-img
+          img(src=require('./styles/img/3.png') alt='')
+        .content1-title Title
+        .content1-description
+          p
+            | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, animi perferendis ex maiores
+            | autem ea odio. Vitae cum quas, modi hic, dolore corporis temporibus ut quos debitis aperiam consequatur
+            | adipisci.
+      .content2
+        .content2-top
+          .small-img
+            a(href="./5.html")
+              img(src=require('./styles/img/6.png') alt='')
+          .content2-title-div Title
+        .content2-text-div
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          | Cupiditate neque accusantium ratione in quasi adipisci voluptates,
+          | repellendus ex itaque maxime eveniet, consequatur totam nostrum doloribus, quos animi omnis corporis id.

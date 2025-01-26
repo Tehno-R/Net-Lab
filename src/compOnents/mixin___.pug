@@ -1,0 +1,96 @@
+mixin createMenu(menu, active)
+    nav.menu
+        each value, key in menu
+            if key == 'Главная'
+                .menu__item--left
+                    .menu__link
+                      a(href= value)= key
+            else 
+                .menu__item
+                    .menu__link
+                      a(href= value)= key
+
+mixin createMenuBuild(menu, active)
+    each value, key in menu 
+        if key == 'Главная'
+            a(href= value)= 'Главная' 
+            a.active(href= "#")= active 
+        else 
+            a(href= value)= key
+
+mixin filterBlock(title, inputs)
+  details
+    summary= title
+    form
+      each input in inputs
+        if input.type === 'group' 
+            p
+             | #{input.label}:
+             input(type=input.fields[0].type, name=input.fields[0].name, min=input.fields[0].min, max=input.fields[0].max )
+             | до
+             input(type=input.fields[1].type, name=input.fields[1].name,  min=input.fields[1].min, max=input.fields[1].max )
+             br
+        else
+             p
+              | #{input.label}:
+              input(type=input.type, name=input.name, id=input.id, min=input.min, max=input.max)
+              br
+      input(type="submit" value="Найти")
+
+mixin sortBlock(title, levels)
+  details
+    summary= title
+    form
+      each level, index in levels
+        p
+          | #{level.label}:
+          select(name=level.name)
+            option(value="0" selected) Нет
+            option(value="1") Да
+          | по убыванию?
+          input(type="checkbox" name="result" value=level.value)
+          br
+      p
+        input(type="submit" value="Сортировать")
+
+mixin graphBlock(title, xAxisOptions, yAxisOptions)
+  details
+    summary= title
+    table(cellpadding="10")
+      tr
+        td
+          form
+            strong Значения по оси OX
+            br
+            each option in xAxisOptions
+              input(type="radio", name="xaxis", value=option.value)
+              | #{option.label}
+              br
+        td
+          form
+            strong Результат
+            br
+            each option in yAxisOptions
+              input(type="checkbox", name="yaxis", value=option.value)
+              | #{option.label}
+              br
+    input(type="button" value="Построить")
+    p Здесь будет график
+
+mixin tableBlock(rowCount)
+  table(border="2" cellspacing="0" cellpadding="5")
+    tr
+      td
+        strong Название
+      td
+        strong Тип аниме
+      td
+        strong Страна производства
+      td
+        strong Год выпуска
+      td
+        strong Количество серий
+    - for (var i = 0; i < 50; i++)
+        tr
+            each value in rowCount[i]
+                td= value

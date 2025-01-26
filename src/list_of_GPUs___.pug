@@ -1,0 +1,548 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title &Scy;&pcy;&icy;&scy;&ocy;&kcy; &scy;&acy;&mcy;&ycy;&khcy; &vcy;&ycy;&scy;&ocy;&kcy;&icy;&khcy; &zcy;&dcy;&acy;&ncy;&icy;&jcy;
+h1 &Pcy;&ocy;&lcy;&ncy;&ycy;&jcy; &scy;&pcy;&icy;&scy;&ocy;&kcy; &scy;&acy;&mcy;&ycy;&khcy; &vcy;&ycy;&scy;&ocy;&kcy;&icy;&khcy; &zcy;&dcy;&acy;&ncy;&icy;&jcy;
+nav
+  ul
+    li
+      a(href='index.html') &Gcy;&lcy;&acy;&vcy;&ncy;&acy;&yacy;
+    li
+      a(href='GPUs.html') &Scy;&acy;&mcy;&ycy;&iecy; &kcy;&rcy;&ucy;&tcy;&ycy;&iecy; &vcy;&icy;&dcy;&iecy;&ocy;&kcy;&acy;&rcy;&tcy;&ycy;
+form
+  details
+    summary &Gcy;&rcy;&acy;&fcy;&icy;&kcy;
+    fieldset
+      label &Zcy;&ncy;&acy;&chcy;&iecy;&ncy;&icy;&iecy; &pcy;&ocy; &ocy;&scy;&icy; OX:
+      br
+      input(type='radio' name='axis' value='Manufact')
+      | Manufact
+      br
+      input(type='radio' name='axis' value='Series')
+      | Series
+      br
+      br
+      label &Rcy;&iecy;&zcy;&ucy;&lcy;&softcy;&tcy;&acy;&tcy;:
+      br
+      input(type='checkbox' name='result' value='G3Dmark')
+      | &mcy;&acy;&kcy;&scy;&icy;&mcy;&acy;&lcy;&softcy;&ncy;&ocy;&iecy; G3Dmark
+      br
+      input(type='checkbox' name='result' value='G3Dmark')
+      | &mcy;&icy;&ncy;&icy;&mcy;&acy;&lcy;&softcy;&ncy;&ocy;&iecy; G3Dmark
+      br
+      input(type='checkbox' name='result' value='G2Dmark')
+      | &mcy;&acy;&kcy;&scy;&icy;&mcy;&acy;&lcy;&softcy;&ncy;&ocy;&iecy; G2Dmark
+      br
+      input(type='checkbox' name='result' value='G2Dmark')
+      | &mcy;&icy;&ncy;&icy;&mcy;&acy;&lcy;&softcy;&ncy;&ocy;&iecy; G2Dmark
+      br
+      br
+      button(type='button') &Pcy;&ocy;&scy;&tcy;&rcy;&ocy;&icy;&tcy;&softcy;
+  details
+    summary &Fcy;&icy;&lcy;&softcy;&tcy;&rcy;
+    fieldset
+      label(for='name') &Ncy;&acy;&zcy;&vcy;&acy;&ncy;&icy;&iecy;:
+      input#name(type='text' name='name')
+      br
+      br
+      label(for='price-from') &TScy;&iecy;&ncy;&acy; &ocy;&tcy;:
+      input#price-from(type='number' name='price-from')
+      |  &dcy;&ocy;
+      input#price-to(type='number' name='price-to')
+      br
+      br
+      label(for='PP-from') PP &ocy;&tcy;:
+      input#PP-from(type='number' name='PP-from')
+      |  &dcy;&ocy;
+      input#PP-to(type='number' name='PP-to')
+      br
+      br
+      label(for='3d-from') G3Dmark &ocy;&tcy;:
+      input#3d-from(type='number' name='3d-from')
+      |  &dcy;&ocy;
+      input#3d-to(type='number' name='3d-to')
+      br
+      br
+      label(for='2d-from') G2Dmark &ocy;&tcy;:
+      input#2d-from(type='number' name='2d-from')
+      |  &dcy;&ocy;
+      input#2d-to(type='number' name='2d-to')
+      br
+      br
+      label Manufact:
+      br
+      input(type='checkbox' name='result' value='Nvidia')
+      | Nvidia
+      br
+      input(type='checkbox' name='result' value='AMD')
+      | AMD
+      br
+      br
+      label Series:
+      br
+      input(type='checkbox' name='result' value='RTX')
+      | RTX
+      br
+      input(type='checkbox' name='result' value='Radeon')
+      | Radeon
+      br
+      input(type='checkbox' name='result' value='RX')
+      | RX
+      br
+      input(type='checkbox' name='result' value='Quadro')
+      | Quadro
+      br
+      input(type='checkbox' name='result' value='Titan')
+      | Titan
+      br
+      br
+      button(type='submit') &Ncy;&acy;&jcy;&tcy;&icy;
+  details
+    summary &Scy;&ocy;&rcy;&tcy;&icy;&rcy;&ocy;&vcy;&kcy;&acy;
+    fieldset
+      label(for='first-level') &Pcy;&iecy;&rcy;&vcy;&ycy;&jcy; &ucy;&rcy;&ocy;&vcy;&iecy;&ncy;&softcy;:
+      select#first-level(name='first-level')
+        option(value='No') No
+        option(value='Title') Title
+        option(value='Price') Price
+        option(value='PP') PP
+        option(value='G3Dmark') G3Dmark
+        option(value='G2Dmark') G2Dmark
+        option(value='Manufact') Manufact
+        option(value='Series') Series
+      |                 &pcy;&ocy; &ucy;&bcy;&ycy;&vcy;&acy;&ncy;&icy;&yucy;?
+      input(type='checkbox' name='first-level-desc')
+      br
+      br
+      label(for='second-level') &Vcy;&tcy;&ocy;&rcy;&ocy;&jcy; &ucy;&rcy;&ocy;&vcy;&iecy;&ncy;&softcy;:
+      select#second-level(name='second-level')
+        option(value='No') No
+        option(value='Title') Title
+        option(value='Price') Price
+        option(value='PP') PP
+        option(value='G3Dmark') G3Dmark
+        option(value='G2Dmark') G2Dmark
+        option(value='Manufact') Manufact
+        option(value='Series') Series
+      |                 &pcy;&ocy; &ucy;&bcy;&ycy;&vcy;&acy;&ncy;&icy;&yucy;?
+      input(type='checkbox' name='second-level-desc')
+      br
+      br
+      label(for='first-level') &Tcy;&rcy;&iecy;&tcy;&icy;&jcy; &ucy;&rcy;&ocy;&vcy;&iecy;&ncy;&softcy;:
+      select#first-level(name='first-level')
+        option(value='No') No
+        option(value='Title') Title
+        option(value='Price') Price
+        option(value='PP') PP
+        option(value='G3Dmark') G3Dmark
+        option(value='G2Dmark') G2Dmark
+        option(value='Manufact') Manufact
+        option(value='Series') Series
+      |                 &pcy;&ocy; &ucy;&bcy;&ycy;&vcy;&acy;&ncy;&icy;&yucy;?
+      input(type='checkbox' name='first-level-desc')
+      br
+      br
+      button(type='button') &Scy;&ocy;&rcy;&tcy;&icy;&rcy;&ocy;&vcy;&acy;&tcy;&softcy;
+table(border='3' cellspacing='0' align='center')
+  thead
+    tr
+      th(scope='col') Title
+      th(scope='col') Price
+      th(scope='col') Power Performance
+      th(scope='col') G3Dmark
+      th(scope='col') G2Dmark
+      th(scope='col') Manufact
+      th(scope='col') Series
+  tbody
+    tr
+      th(scope='row') GeForce RTX 3090 Ti
+      td 2099.99
+      td 64.65
+      td 29094
+      td 1117
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') GeForce RTX 3080 Ti
+      td 1199.99
+      td 76.82
+      td 26887
+      td 1031
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') GeForce RTX 3090
+      td 1749.99
+      td 75.41
+      td 26395
+      td 999
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') Radeon RX 6900 XT
+      td 1120.31
+      td 84.86
+      td 25458
+      td 1102
+      td AMD
+      td Radeon
+    tr
+      th(scope='row') GeForce RTX 3080
+      td 999
+      td 77.66
+      td 24853
+      td 1003
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') GeForce RTX 3070 Ti
+      td 749.99
+      td 80.58
+      td 23367
+      td 1003
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') Radeon RX 6800 XT
+      td 859
+      td 77.88
+      td 23364
+      td 1078
+      td AMD
+      td Radeon
+    tr
+      th(scope='row') RTX A5000
+      td 2631.2
+      td 99.42
+      td 22867
+      td 984
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') RTX A6000
+      td 4999.99
+      td 73.74
+      td 22122
+      td 832
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') GeForce RTX 3070
+      td 719.99
+      td 100.42
+      td 22093
+      td 969
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') GeForce RTX 2080 Ti
+      td 998.59
+      td 87.18
+      td 21796
+      td 940
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') RTX A4500
+      td 2134.64
+      td 107.73
+      td 21546
+      td 892
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') Radeon RX 6800
+      td 758.99
+      td 82.67
+      td 20667
+      td 1030
+      td AMD
+      td Radeon
+    tr
+      th(scope='row') GeForce RTX 3060 Ti
+      td 599.99
+      td 101.03
+      td 20206
+      td 961
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') TITAN RTX
+      td 2794.99
+      td 72.03
+      td 20169
+      td 844
+      td Nvidia
+      td TITAN
+    tr
+      th(scope='row') Quadro RTX 6000
+      td 6300
+      td 66.75
+      td 19692
+      td 837
+      td Nvidia
+      td Quadro
+    tr
+      th(scope='row') GeForce RTX 2080 SUPER
+      td 683.99
+      td 78.08
+      td 19519
+      td 934
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') TITAN Xp
+      td 100
+      td 78.03
+      td 19508
+      td 992
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') GeForce RTX 3080 Ti Laptop GPU
+      td 100
+      td 130.0466667
+      td 19507
+      td 780
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') Quadro RTX 8000
+      td 4741.49
+      td 73.56
+      td 19126
+      td 801
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') Radeon RX 6700 XT
+      td 529.99
+      td 82.58
+      td 18993
+      td 1014
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') RTX A4000
+      td 1233.98
+      td 135.63
+      td 18988
+      td 938
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') TITAN V
+      td 1999.99
+      td 75.26
+      td 18816
+      td 845
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') Radeon PRO W6800
+      td 2194.99
+      td 75.208
+      td 18802
+      td 914
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') GeForce RTX 2080
+      td 633.03
+      td 74.93
+      td 18732
+      td 917
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') TITAN Xp COLLECTORS EDITION
+      td 100
+      td 74.89
+      td 18721
+      td 924
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') GeForce RTX 3070 Ti Laptop GPU
+      td 100
+      td 147.92
+      td 18490
+      td 719
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') GeForce GTX 1080 Ti
+      td 604.15
+      td 73.14
+      td 18284
+      td 934
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') NVIDIA TITAN Xp
+      td 1645
+      td 73.12
+      td 18280
+      td 812
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') GeForce RTX 2070 SUPER
+      td 613.8
+      td 84.5
+      td 18168
+      td 896
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') Quadro GV100
+      td 8999
+      td 70.7
+      td 17675
+      td 841
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') TITAN V CEO Edition
+      td 100
+      td 67.95
+      td 16988
+      td 1086
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') GeForce RTX 3060
+      td 329
+      td 99.76
+      td 16958
+      td 951
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') Radeon RX 5700 XT
+      td 694.94
+      td 75.08
+      td 16892
+      td 955
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') Radeon Pro VII
+      td 100
+      td 67.41
+      td 16853
+      td 720
+      td AMD
+      td Radeon
+    tr
+      th(scope='row') Radeon VII
+      td 1899.95
+      td 55.89
+      td 16767
+      td 788
+      td AMD
+      td Radeon
+    tr
+      th(scope='row') Radeon RX 5700 XT 50th Anniversary
+      td 100
+      td 70.85
+      td 16650
+      td 965
+      td AMD
+      td Radeon
+    tr
+      th(scope='row') GeForce RTX 3080 Laptop GPU
+      td 100
+      td 143.67
+      td 16522
+      td 662
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') GeForce RTX 2060 SUPER
+      td 528.89
+      td 94.37
+      td 16514
+      td 881
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') RTX A4000 Laptop GPU
+      td 100
+      td 116.41
+      td 16297
+      td 543
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') RTX A5000 Laptop GPU
+      td 100
+      td 98.62
+      td 16273
+      td 640
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') Quadro RTX 5000
+      td 100
+      td 70.7
+      td 16260
+      td 763
+      td Nvidia
+      td Quadro
+    tr
+      th(scope='row') Tesla V100-SXM2-16GB
+      td 100
+      td 100
+      td 16235
+      td 406
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') Quadro GP100
+      td 100
+      td 68.95
+      td 16203
+      td 858
+      td Nvidia
+      td Quadro
+    tr
+      th(scope='row') GeForce RTX 2070
+      td 627.44
+      td 91.88
+      td 16079
+      td 833
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') Miracast display port driver V3
+      td 482
+      td 55
+      td 15910
+      td 604
+      td Nvidia
+      td RTX
+    tr
+      th(scope='row') Radeon RX 6850M
+      td 5500
+      td 100
+      td 15899
+      td 823
+      td AMD
+      td Radeon
+    tr
+      th(scope='row') Radeon RX 6600 XT
+      td 399.99
+      td 99.08
+      td 15853
+      td 1003
+      td AMD
+      td Radeon
+    tr
+      th(scope='row') Quadro P6000
+      td 3250
+      td 63.25
+      td 15811
+      td 773
+      td Nvidia
+      td Quadro
