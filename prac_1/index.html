@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание</title>
+</head>
+<body>
+
+<h3>Топ браузеров</h3>
+<table id="test">
+    <tr>
+        <th>Браузеры</th>
+        <!-- <th>Доля рынка</th> -->
+        <!-- <th>доп столбец</th> -->
+    </tr>
+    <tr>
+        <td>Google Chrome</td>
+        <!-- <td>63.33%</td> -->
+        <!-- <td>значение 1</td> -->
+    </tr>
+    <tr>
+        <td>Apple Safari</td>
+        <!-- <td>13.13%</td> -->
+        <!-- <td>значение 2</td> -->
+    </tr>
+    <tr>
+        <td>Microsoft Edge</td>
+        <!-- <td>10.46%</td> -->
+        <!-- <td>значение 3</td> -->
+    </tr>
+    <tr>
+        <td>Mozilla Firefox</td>
+        <!-- <td>5.96%</td> -->
+        <!-- <td>значение 4</td> -->
+    </tr>
+</table>
+
+<button onclick="changeTable()">Поменять местами столбцы</button>
+
+<script>
+    function changeTable() {
+        const table = document.getElementById("test");
+        const rows = table.getElementsByTagName("tr");
+
+        // Проходим по каждой строке таблицы
+        for (let i = 0; i < rows.length; i++) {
+            const cells = rows[i].children;
+
+            // Меняем местами первый и последний столбец
+            const firstCell = cells[0].innerText;
+            const lastCell = cells[cells.length - 1].innerText;
+
+            cells[0].innerText = lastCell;
+            cells[cells.length - 1].innerText = firstCell;
+        }
+    }
+</script>
+
+</body>
+</html>
