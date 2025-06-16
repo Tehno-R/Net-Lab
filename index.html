@@ -1,83 +1,68 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <title>Главная страница</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="finder"><input type="text" class="find-holder"></div>
-        <div class="main-theme">
-            <div class="navigate">
-                <a class="menu" href="google.com">Menu 1</a>
-                <a class="menu" href="google.com">Menu 2</a>
-                <a class="menu" href="google.com">Menu 3</a>
-                <a class="menu" href="google.com">Menu 4</a>
-            </div>
-            <div class="main-title">
-                Видеокарты!!!
-            </div>
-        </div>
-        <div class="content-container">
-            <div class="content1">
-                <div class="big-img"><img src="img/1.png" alt=""></div>
-                <div class="content1-title">Title</div>
-                <div class="content1-description">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, animi perferendis ex maiores
-                         autem ea odio. Vitae cum quas, modi hic, dolore corporis temporibus ut quos debitis aperiam consequatur
-                          adipisci.</p>
-                </div>
-            </div>
-            <div class="content2">
-                <div class="content2-top">
-                    <div class="small-img"><img src="img/4.png" alt=""></div>
-                    <div class="content2-title-div">Title</div>
-                </div>
-                <div class="content2-text-div">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Cupiditate neque accusantium ratione in quasi adipisci voluptates, 
-                    repellendus ex itaque maxime eveniet, consequatur totam nostrum doloribus, quos animi omnis corporis id.
-                </div>
-            </div>
-            <div class="content1">
-                <div class="big-img"><img src="img/2.png" alt=""></div>
-                <div class="content1-title">Title</div>
-                <div class="content1-description">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, animi perferendis ex maiores
-                         autem ea odio. Vitae cum quas, modi hic, dolore corporis temporibus ut quos debitis aperiam consequatur
-                          adipisci.</p>
-                </div>
-            </div>
-            <div class="content2">
-                <div class="content2-top">
-                    <div class="small-img"><img src="img/5.png" alt=""></div>
-                    <div class="content2-title-div">Title</div>
-                </div>
-                <div class="content2-text-div">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Cupiditate neque accusantium ratione in quasi adipisci voluptates, 
-                    repellendus ex itaque maxime eveniet, consequatur totam nostrum doloribus, quos animi omnis corporis id.
-                </div>
-            </div>
-            <div class="content1">
-                <div class="big-img"><img src="img/3.png" alt=""></div>
-                <div class="content1-title">Title</div>
-                <div class="content1-description">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, animi perferendis ex maiores
-                         autem ea odio. Vitae cum quas, modi hic, dolore corporis temporibus ut quos debitis aperiam consequatur
-                          adipisci.</p>
-                </div>
-            </div>
-            <div class="content2">
-                <div class="content2-top">
-                    <div class="small-img"><img src="img/6.png" alt=""></div>
-                    <div class="content2-title-div">Title</div>
-                </div>
-                <div class="content2-text-div">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Cupiditate neque accusantium ratione in quasi adipisci voluptates, 
-                    repellendus ex itaque maxime eveniet, consequatur totam nostrum doloribus, quos animi omnis corporis id.
-                </div>
-            </div>
-        </div>
-    </body>
+<head>
+    <meta charset="utf-8">
+    <title> Трансформация и анимация</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="JavaScript/path.js"></script>
+    <script type="module" src="JavaScript/main.js"></script>
+    <script src="JavaScript/image.js"></script>
+</head>
+<body>
+
+<form id="setting">
+    <div id="moveBy">
+        <p>Координаты рисунка<br>
+            <label for="pos_x">x: </label>
+            <input type="number" id="pos_x" value="300" max="600" min="0">
+            <label for="pos_y">y: </label>
+            <input type="number" id="pos_y" value="300" max="600" min="0">
+            <br>
+            <label for="pos_x_final">final x: </label>
+            <input type="number" id="pos_x_final" value="500" max="600" min="0">
+            <label for="pos_y_final">final y: </label>
+            <input type="number" id="pos_y_final" value="500" max="600" min="0">
+        </p>
+    </div>
+    <p>Масштаб рисунка<br>
+        <label for="scale_x">x: </label>
+        <input type="number" id="scale_x" value="1" max="1000" min="0">
+        <label for="scale_y">y: </label>
+        <input type="number" id="scale_y" value="1" max="1000" min="0">
+        <br>
+        <label for="scale_x_final">final x: </label>
+        <input type="number" id="scale_x_final" value="2" max="1000" min="0">
+        <label for="scale_y_final">final y: </label>
+        <input type="number" id="scale_y_final" value="2" max="1000" min="0">
+    </p>
+    <p>Поворот рисунка<br>
+        <label for="angle">angle: </label>
+        <input type="number" id="angle" value="0" max="360" min="0"><br>
+        <label for="angle_final">final angle: </label>
+        <input type="number" id="angle_final" value="90" max="360" min="0">
+    </p>
+    <p>
+        <input type="button" value="Нарисовать" onclick="draw(document.getElementById('setting'))">
+        <input type="button" value="Очистить" onclick="alert('empty')">
+    </p>
+
+    <label for="animCheck">Включить анимацию?</label>
+    <input type="checkbox" id="animCheck">
+    <p id="animParam" style="display: none;">
+        <label for="easingType">Тип анимации:</label>
+        <select id="easingType">
+            <option value="Linear">linear</option>
+            <option value="Elastic">elastic</option>
+            <option value="Bounce">bounce</option>
+        </select>
+        <br>
+        <label for="byShape">Двигаться по формочке</label>
+        <input type="checkbox" id="byShape">
+        <br>
+        <input type="button" value="Анимировать" onclick="runAnimation(document.getElementById('setting'))">
+    </p>
+</form>
+<svg></svg>
+
+</body>
 </html>

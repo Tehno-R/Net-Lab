@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>D3 Задание</title>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+  function changePage(n = 0) {
+      d3.selectAll("p").each(function() {
+          const p = d3.select(this);
+          const fullText = this.textContent;
+
+          const spaceIndex = fullText.indexOf(' ', n);
+          if (spaceIndex !== -1 && fullText.length > n) {
+              const visibleText = fullText.slice(0, spaceIndex) + "...";
+              const hiddenText = fullText.slice(spaceIndex + 1);
+
+              p.text(visibleText);
+              p.append("span")
+                  .attr("class", "hide")
+                  .text(hiddenText);
+          }
+      });
+
+      // let paragraphs = d3.selectAll("p");
+    // paragraphs = paragraphs.filter(function() {
+    //       return this.textContent.length > n;
+    // });
+    //
+    // paragraphs.each(function() {
+    //     const text = this.textContent;
+    //
+    //     const visiblePart = text.slice(0, n);
+    //     const hiddenPart = text.slice(n);
+    //
+    //     this.textContent = visiblePart;
+    //
+    //     d3.select(this)
+    //         .append("span")
+    //         .attr("class", "hide")
+    //         .text(hiddenPart);
+    // });
+
+    // paragraphs.each(function() {
+    //       d3.select(this)
+    //           .insert("span", ":first-child");
+    // });
+
+    paragraphs.each(function() {
+          this.textContent += "...";
+    });
+  }
+</script>
+<body>
+  <button id="changeBtn" onclick="changePage()">Изменить абзацы</button>
+  <h3>Языки программирования</h3>
+  <div>Python</div>
+  <div>C</div>
+  <div><a href="#">Java</a></div>
+  <h3>История создания</h3>
+  <div>
+    <p>Python создан в 1989-1991 годах голландским программистом Гвидо Ван Россумом.</p>
+    <p>C разработан в 1969-1973 годах сотрудником Bell Labs Деннисом Ритчи.</p>
+    <p>Java разработан в 1990-1996 годах канадским программистом Джеймсом Гослингом.</p>
+    <p>JavaScript разработан в 1996 году, автор - американский программист Брендан Айк.</p>
+    <p>Prolog разработан в 1972 году, автор - французский программист Ален Колмероэ.</p>
+    <p>Rub разработан в 1993-1995 годах, автор - японский программист Юкихиро Мацумото.</p>
+  </div>
+</body>
+</html>
