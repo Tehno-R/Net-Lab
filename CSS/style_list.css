@@ -1,0 +1,143 @@
+/* Основные стили страницы */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: #1a1a1a;
+    background-color: #f2f6fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Стили для таблицы зданий */
+#list {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px auto;
+    max-width: 1000px;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    font-family: Arial, sans-serif;
+}
+
+#list th, #list td {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+#list th {
+    background-color: #e8eff7;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    font-weight: 600;
+}
+
+#list tr:nth-child(even) {
+    background-color: #fbfdff;
+}
+
+#list tr:hover {
+    background-color: #f1f7fd;
+}
+
+#list td:first-child, #list th:first-child {
+    padding-left: 20px;
+}
+
+#list td:last-child, #list th:last-child {
+    padding-right: 20px;
+}
+
+/* Стили для форм */
+form {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+}
+
+form label {
+    display: inline-block;
+    width: 120px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form select {
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccd5e0;
+    border-radius: 8px;
+    background-color: #f9fbfd;
+    color: #000;
+    transition: border-color 0.2s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form select:focus {
+    border-color: #4A90E2;
+    outline: none;
+}
+
+form input[type="button"],
+form button {
+    padding: 10px 20px;
+    background-color: #4A90E2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="button"]:hover,
+form button:hover {
+    background-color: #357ABD;
+}
+
+/* Стили для SVG */
+svg {
+    width: 800px;
+    height: 400px;
+    display: block;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+svg text {
+    font: 8px Verdana;
+}
+
+svg path {
+    fill: none;
+    stroke: #333333;
+    width: 1px;
+}
+
+/* Стили для ошибок */
+.error {
+    display: block;
+    margin-bottom: 10px;
+    color: #ff3b30;
+    font-weight: 500;
+}
+
+/* Дополнительные стили для заголовков */
+h3 {
+    color: #222;
+    margin: 20px auto;
+    max-width: 900px;
+    font-size: 1.5em;
+}

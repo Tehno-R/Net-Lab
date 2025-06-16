@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Список самых высоких зданий - Фильтры и визуализация</title>
+  <link rel="stylesheet" href="CSS/style_list.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="JavaScript/data.js"></script>
+  <script src="JavaScript/main.js"></script>
+  <script src="JavaScript/table.js"></script>
+  <script src="JavaScript/filter.js"></script>
+  <script src="JavaScript/sort.js"></script>
+  <script src="JavaScript/chart.js"></script>
+<!--  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">-->
+</head>
+<body>
+
+<h1>Список самых высоких зданий</h1>
+
+<div class="controls-container">
+  <!-- Форма для фильтрации -->
+  <div class="control-section">
+    <h2>Фильтрация данных</h2>
+    <form id="filter">
+      <p>
+        <label for="gpuName">Название:</label>
+        <input type="text" id="gpuName">
+      </p>
+      <p>
+        <label for="G3DmarkFrom">G3Dmark: </label>
+        от <input type="number" id="G3DmarkFrom">
+        до <input type="number" id="G3DmarkTo">
+      </p>
+      <p>
+        <label for="priceFrom">Цена:</label>
+        от <input type="number" id="priceFrom">
+        до <input type="number" id="priceTo">
+      </p>
+      <p>
+        <label for="powerPerformanceFrom">Производительность: </label>
+        от <input type="number" id="powerPerformanceFrom">
+        до <input type="number" id="powerPerformanceTo">
+      </p>
+      <p>
+        <label for="yearFrom">Год выпуска:</label>
+        от <input type="number" id="yearFrom">
+        до <input type="number" id="yearTo">
+      </p>
+      <p>
+        <label for="category">Category:</label>
+        <input type="text" id="category">
+      </p>
+      <p>
+        <label for="subCategory">Sub Category:</label>
+        <input type="text" id="subCategory">
+      </p>
+      <p>
+        <input type="button" value="Найти">
+        <input type="button" value="Очистить фильтры">
+      </p>
+    </form>
+  </div>
+
+  <!-- Форма для сортировки -->
+  <div class="control-section">
+    <h2>Сортировка данных</h2>
+    <form id="sort">
+      <p> Сортировать по</p>
+      <p>
+        <select id="fieldsFirst">
+        </select>
+        по убыванию? <input type="checkbox" id="fieldsFirstDesc">
+      </p>
+      <p>
+        <select id="fieldsSecond">
+        </select>
+        по убыванию? <input type="checkbox" id="fieldsSecondDesc">
+      </p>
+      <p>
+        <select id="fieldsThird">
+        </select>
+        по убыванию? <input type="checkbox" id="fieldsThirdDesc">
+      </p>
+      <input type="button" value="Сортировать">
+      <input type="button" value="Сбросить сортировку">
+    </form>
+  </div>
+
+  <!-- Форма для визуализации -->
+  <div class="control-section">
+    <h2>Форма для визуализация данных</h2>
+    <form id="data">
+      <p>Значение по оси OX<br><br>
+        <label>
+          <input type="radio" name="ox" value="releaseYear" id="firstR" checked>
+          Years
+        </label><br>
+        <label>
+          <input type="radio" name="ox" value="subCategory" id="secondR">
+          SubCategories
+        </label>
+      </p>
+      <p>Значение по оси OY<br><br>
+        <input type="checkbox" id="price_y_min">
+        <label for="price_y_min" id="check1">Минимальная цена</label><br>
+        <input type="checkbox" id="price_y_max">
+        <label for="price_y_max" id="check2">Максимальная цена</label>
+      </p>
+      <label for="type">Тип графика</label>
+      <select id="type" name="type">
+        <option value="first">Гистограмма</option>
+        <option value="second">Точечный</option>
+        <option value="third">График</option>
+      </select><br><br>
+      <button type="button" id="draw">Построить</button>
+      <p><span id="error-message" class="error"></span></p>
+    </form>
+  </div>
+</div>
+
+<!-- График -->
+<div class="chart-container">
+  <h2>Визуализация данных</h2>
+  <svg></svg>
+</div>
+
+<!-- Управление таблицей -->
+<div class="table-controls">
+<!--  <button type="button" id="start">Скрыть таблицу</button>-->
+</div>
+
+<!-- Таблица для отображения данных -->
+<table id="list">
+</table>
+
+</body>
+</html>
