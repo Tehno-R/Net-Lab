@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import {useState} from 'react';
 
 const Sort = (props) => {
 
@@ -12,6 +12,7 @@ const Sort = (props) => {
         "subCategory": "СабКатегория"
     };
 
+    // const fieldMap = props.keys;
 
 
     // Состояние для хранения выбранных полей сортировки
@@ -29,7 +30,7 @@ const Sort = (props) => {
             level3: "0"
         });
 
-        // props.sortering(props.fullData);
+        props.sortering(props.data);
     };
 
     const handleFieldChange = (level, value) => {
@@ -93,7 +94,7 @@ const Sort = (props) => {
 
         // Применяем сортировку
         sorts.reverse().forEach(s => {
-            arr.sort((a,b) => {
+            arr.sort((a, b) => {
                 const value_a = a[s.field];
                 const value_b = b[s.field];
 
@@ -116,12 +117,8 @@ const Sort = (props) => {
 
     // Получаем доступные опции для каждого уровня сортировки
     const level1Options = getAvailableOptions("level1");
-
-    // const level2Options = selectedFields.level1 !== "0" ? getAvailableOptions("level2") : [];
-    // const level3Options = selectedFields.level2 !== "0" ? getAvailableOptions("level3") : [];
-
-    const level2Options = getAvailableOptions("level2");
-    const level3Options = getAvailableOptions("level3");
+    const level2Options = selectedFields.level1 !== "0" ? getAvailableOptions("level2") : [];
+    const level3Options = selectedFields.level2 !== "0" ? getAvailableOptions("level3") : [];
 
     return (
         <form onSubmit={handleSubmit}>
