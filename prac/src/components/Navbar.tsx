@@ -13,6 +13,9 @@ import MenuItem from '@mui/material/MenuItem';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import TextField from '@mui/material/TextField'
 
+import {Link} from 'react-router-dom';
+
+
 interface ComponentProps {
     active: string;
 }
@@ -49,27 +52,33 @@ function Navbar({ active }: ComponentProps) {
                         Самые крутые видеокарты со всего мира
                     </Typography>
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <Button
-                            variant={active === "1" ? "contained" : "text"}
-                            color="info"
-                            size="medium"
-                        >
-                            Home
-                        </Button>
-                        <Button
-                            variant={active === "2" ? "contained" : "text"}
-                            color="info"
-                            size="medium"
-                        >
-                            About us
-                        </Button>
-                        <Button
-                            variant={active === "3" ? "contained" : "text"}
-                            color="info"
-                            size="medium"
-                        >
-                            List
-                        </Button>
+                        <Link to="/">
+                            <Button
+                                variant={active === "1" ? "contained" : "text"}
+                                color="info"
+                                size="medium"
+                            >
+                                Home
+                            </Button>
+                        </Link>
+                        <Link to="/list">
+                            <Button
+                                variant={active === "2" ? "contained" : "text"}
+                                color="info"
+                                size="medium"
+                            >
+                                List
+                            </Button>
+                        </Link>
+                        <Link to="/chart">
+                            <Button
+                                variant={active === "3" ? "contained" : "text"}
+                                color="info"
+                                size="medium"
+                            >
+                                Chart
+                            </Button>
+                        </Link>
                         <TextField id="standard-basic" label="Find GPU" variant="standard" sx={{ml: '30px', mr: '20px'}} />
                         <Button
                             variant="contained"

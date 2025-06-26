@@ -1,17 +1,13 @@
-import Navbar from "./components/Navbar";
-import Gallery from "./components/Gallery";
-import Content from "./components/Content";
-import Footer from "./components/Footer";
-
-function App() {
-  return (
-    <div>
-      <Navbar active="1" />
-      <Gallery/>
-      <Content/>
-      <Footer />
-    </div>
-  );
-}
-
-export default App;
+import Main from "./main/Main"; 
+import List from "./list/List"; 
+import Chart from "./chart/Chart";
+ 
+function App() { 
+  return ( 
+    <> 
+      <Chart/> 
+    </>
+  ); 
+} 
+  
+export default App; 

@@ -1,16 +1,19 @@
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import { styled } from '@mui/material/styles';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import Drawer from '@mui/material/Drawer';
-import React from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import { Drawer } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import React from 'react';
+import { lightBlue } from '@mui/material/colors';
+
+import {Link} from 'react-router-dom';
 
 interface ComponentProps {
     active: string;
@@ -27,113 +30,97 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     padding: '8px 12px',
 }));
 
+const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
+    color: theme.palette.common.black,
+    '&:hover': {
+        backgroundColor: lightBlue[100],
+    },
+
+}));
+
 function Navbar({ active }: ComponentProps) {
+
     const [open, setOpen] = React.useState(false);
+
     const toggleDrawer = (newOpen: boolean) => () => {
-        setOpen(newOpen);
+      setOpen(newOpen);
+    };
+
+    const getButtonVariant = (buttonNumber: string) => {
+        return active === buttonNumber ? 'contained' : 'text';
+    };
+
+    const isMenuItemActive = (menuItemNumber: string) => {
+        return active === menuItemNumber ? { backgroundColor: 'info.main', color: 'common.black' } : {};
     };
 
     return (
-        <AppBar
-            position="static"
-            sx={{
-                boxShadow: 0,
-                bgcolor: 'transparent',
-                mt: '28px',
-            }}
+        <AppBar      
+          position="static"
+          sx={{
+            boxShadow: 0,
+            bgcolor: 'transparent',
+            mt: '28px',
+          }}
         >
             <Container maxWidth="xl">
                 <StyledToolbar>
                     <Typography variant="h6" sx={{ color: '#5d8aa8' }}>
                         Самые высокие здания и сооружения
                     </Typography>
-                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <Button
-                            variant={active === "1" ? "contained" : "text"}
-                            color="info"
-                            size="medium"
-                        >
-                            Главная
+                <Box sx={{ display: { xs: 'none', md: 'flex' } }}> 
+                    <Link to="/">
+                        <Button variant={getButtonVariant("1")} color="info" size="medium"> 
+                            Главная 
                         </Button>
-                        <Button
-                            variant={active === "2" ? "contained" : "text"}
-                            color="info"
-                            size="medium"
-                        >
-                            Список зданий
+                    </Link> 
+                    <Link to="/list"> 
+                        <Button variant={getButtonVariant("2")} color="info" size="medium"> 
+                            Список зданий 
+                        </Button> 
+                    </Link>
+                    <Link to="/chart">
+                        <Button variant={getButtonVariant("3")} color="info" size="medium"> 
+                            Диаграммы 
                         </Button>
-                        <Button
-                            variant={active === "3" ? "contained" : "text"}
-                            color="info"
-                            size="medium"
-                        >
-                            Контакты
-                        </Button>
-                    </Box>
-                    <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-                        <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
-                            <MenuIcon />
-                        </IconButton>
-                        <Drawer
-                            anchor="top"
-                            open={open}
-                            onClose={toggleDrawer(false)}
-                        >
-                            <Box>
-                                <Box
-                                    sx={{
-                                        display: 'flex',
-                                        justifyContent: 'flex-end',
-                                    }}
-                                >
-                                    <IconButton onClick={toggleDrawer(false)}>
-                                        <CloseRoundedIcon />
-                                    </IconButton>
-                                </Box>
-                                <MenuItem
-                                    selected={active === "1"}
-                                    sx={{
-                                        '&:hover': {
-                                            backgroundColor: 'info.main',
-                                            color: 'white',
-                                        },
-                                        backgroundColor: active === "1" ? 'info.main' : undefined,
-                                        color: active === "1" ? 'white' : undefined,
-                                    }}
-                                >
-                                    Главная
-                                </MenuItem>
-                                <MenuItem
-                                    selected={active === "2"}
-                                    sx={{
-                                        '&:hover': {
-                                            backgroundColor: 'info.main',
-                                            color: 'white',
-                                        },
-                                        backgroundColor: active === "2" ? 'info.main' : undefined,
-                                        color: active === "2" ? 'white' : undefined,
-                                    }}
-                                >
-                                    Список зданий
-                                </MenuItem>
-                                <MenuItem
-                                    selected={active === "3"}
-                                    sx={{
-                                        '&:hover': {
-                                            backgroundColor: 'info.main',
-                                            color: 'white',
-                                        },
-                                        backgroundColor: active === "3" ? 'info.main' : undefined,
-                                        color: active === "3" ? 'white' : undefined,
-                                    }}
-                                >
-                                    Контакты
-                                </MenuItem>
+                    </Link> 
+                </Box> 
+                <Box sx={{ display: { xs: 'flex', md: 'none' }}}>     
+                    <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}> 
+                        <MenuIcon /> 
+                    </IconButton> 
+                    <Drawer 
+                        anchor="top"  
+                        open={ open } 
+                        onClose={toggleDrawer(false)}
+                    > 
+                        <Box>
+                            <Box 
+                                sx={{ 
+                                    display: 'flex', 
+                                    justifyContent: 'flex-end', 
+                                }} 
+                                > 
+                                <IconButton onClick={toggleDrawer(false)}> 
+                                    <CloseRoundedIcon /> 
+                                </IconButton> 
                             </Box>
-                        </Drawer>
-                    </Box>
+                            <Link to="/">
+                                <StyledMenuItem sx={isMenuItemActive("1")}>Главная</StyledMenuItem>
+                            </Link>
+                            <Link to="/list">
+                                <StyledMenuItem sx={isMenuItemActive("2")}>Список зданий</StyledMenuItem>
+                            </Link>
+                            <Link to="/chart">
+                                <StyledMenuItem sx={isMenuItemActive("3")}>Диаграммы</StyledMenuItem>   
+                            </Link>
+                        </Box>
+                    </Drawer>
+                </Box>
+                
                 </StyledToolbar>
             </Container>
+
         </AppBar>
     );
 }
